@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Xavier
  * @version 1.0
- * @CopyRright (c): <素焉>
+ * @CopyRright (c): 星辰
  */
 public interface IApprovalGroupService extends IService<ApprovalGroup> {
 

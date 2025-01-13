@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
  *
  * @author Xavier
  * @version 1.0
- * @CopyRright (c): <素焉>
+ * @CopyRright (c): 星辰
  */
 public abstract class MenuConvertor {
 

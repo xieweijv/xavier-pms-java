@@ -12,7 +12,7 @@ import com.xavier.pms.resp.DepartmentVo;
  *
  * @author Xavier
  * @version 1.0
- * @CopyRright (c): <素焉>
+ * @CopyRright (c): 星辰
  */
 public interface IDepartmentService extends IService<Department> {
 

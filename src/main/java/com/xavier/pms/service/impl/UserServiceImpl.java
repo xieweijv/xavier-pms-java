@@ -13,6 +13,7 @@ import com.xavier.pms.model.User;
 import com.xavier.pms.req.EmployeeAddDto;
 import com.xavier.pms.req.EmployeeQueryDto;
 import com.xavier.pms.req.LoginDto;
+import com.xavier.pms.req.UpdatePwdDto;
 import com.xavier.pms.resp.EmployeeCardVo;
 import com.xavier.pms.resp.EmployeeListVo;
 import com.xavier.pms.result.QueryResultVo;
@@ -39,7 +40,7 @@ import java.util.Objects;
  *
  * @author Xavier
  * @version 1.0
- * @CopyRright (c): <素焉>
+ * @CopyRright (c): 星辰
  */
 @Slf4j
 @Service("userService")
@@ -177,4 +178,17 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         }
         return super.getById(department.getUserId());
     }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void updatePwd(UpdatePwdDto dto) {
+        User user = getBaseUser(dto.getUserId());
+        if (!passwordEncoderUtil.matches(dto.getOldPassword(), user.getUserPwd())) {
+            throw new ServiceException(ResultCode.C505);
+        }
+        super.updateById(User.builder()
+                .id(user.getId())
+                .userPwd(passwordEncoderUtil.encode(dto.getNewPassword())).build());
+    }
 }
+

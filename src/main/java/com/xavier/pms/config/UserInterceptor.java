@@ -46,7 +46,6 @@ public class UserInterceptor implements HandlerInterceptor {
                 return false;
             }
             UserInfoVo userInfoVO = BeanUtil.beanCopy(user, UserInfoVo.class);
-            userInfoVO.setId(19007199254740991L);
             userInfoVO.setToken(token);
             UserContainer.set(userInfoVO);
             return true;

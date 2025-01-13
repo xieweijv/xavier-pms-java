@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Param;
  *
  * @author Xavier
  * @version 1.0
- * @CopyRright (c): <素焉>
+ * @CopyRright (c): 星辰
  */
 @Mapper
 public interface AuditFormMapper extends BaseMapper<AuditForm> {

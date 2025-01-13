@@ -27,6 +27,7 @@
         <hutool.version>5.8.26</hutool.version>
         <mybatis-plus.version>3.5.2</mybatis-plus.version>
         <mysql-connector-j.version>8.0.33</mysql-connector-j.version>
+        <yitter-idgenerator.version>1.0.6</yitter-idgenerator.version>
     </properties>
 
     <dependencies>
@@ -92,6 +93,12 @@
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.yitter</groupId>
+            <artifactId>yitter-idgenerator</artifactId>
+            <version>${yitter-idgenerator.version}</version>
         </dependency>
     </dependencies>
 

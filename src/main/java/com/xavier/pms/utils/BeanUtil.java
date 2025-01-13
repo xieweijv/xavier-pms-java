@@ -72,10 +72,10 @@ public class BeanUtil {
             return null;
         }
         QueryResultVo<T> queryResultVO = new QueryResultVo();
-        queryResultVO.setPageNo(page.getCurrent());
-        queryResultVO.setPageSize(page.getSize());
-        queryResultVO.setPages(page.getPages());
-        queryResultVO.setTotal(page.getTotal());
+        queryResultVO.setPageNo(Math.toIntExact(page.getCurrent()));
+        queryResultVO.setPageSize(Math.toIntExact(page.getSize()));
+        queryResultVO.setPages(Math.toIntExact(page.getPages()));
+        queryResultVO.setTotal(Math.toIntExact(page.getTotal()));
         return queryResultVO;
     }
 

@@ -5,6 +5,7 @@ import com.xavier.pms.model.User;
 import com.xavier.pms.req.EmployeeAddDto;
 import com.xavier.pms.req.EmployeeQueryDto;
 import com.xavier.pms.req.LoginDto;
+import com.xavier.pms.req.UpdatePwdDto;
 import com.xavier.pms.resp.EmployeeCardVo;
 import com.xavier.pms.resp.EmployeeListVo;
 import com.xavier.pms.result.QueryResultVo;
@@ -16,7 +17,7 @@ import java.util.List;
  *
  * @author Xavier
  * @version 1.0
- * @CopyRright (c): <素焉>
+ * @CopyRright (c): 星辰
  */
 public interface IUserService extends IService<User> {
 
@@ -87,5 +88,10 @@ public interface IUserService extends IService<User> {
      * @return
      */
     User getDepartmentUser(Long id);
+
+    /**
+     * 修改密码
+     */
+    void updatePwd(UpdatePwdDto dto);
 
 }

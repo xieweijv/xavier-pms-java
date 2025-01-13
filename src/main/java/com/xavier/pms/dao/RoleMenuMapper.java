@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
  *
  * @author Xavier
  * @version 1.0
- * @CopyRright (c): <素焉>
+ * @CopyRright (c): 星辰
  */
 @Mapper
 public interface RoleMenuMapper extends BaseMapper<RoleMenu> {

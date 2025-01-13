@@ -2,10 +2,7 @@ package com.xavier.pms.model;
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.xavier.pms.utils.XavierLambdaQueryWrapper;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -16,6 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @ToString(callSuper = true)
 @TableName("tb_user")
+@Builder
 public class User {
 
     public static final XavierLambdaQueryWrapper<User> gw() {

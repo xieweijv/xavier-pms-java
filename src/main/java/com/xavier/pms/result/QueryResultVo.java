@@ -21,7 +21,7 @@ public class QueryResultVo<E> implements Serializable {
      * @Fields pageNum : 第几页
      */
     @Schema(description = "第几页")
-    private long pageNo;
+    private Integer pageNo;
 
     /**
      * @Fields pageNum : 是否有下一页
@@ -32,19 +32,19 @@ public class QueryResultVo<E> implements Serializable {
      * @Fields pageSize : 每页多少数据
      */
     @Schema(description = "每页多少数据")
-    private long pageSize;
+    private Integer pageSize;
 
     /**
      * @Fields totalPages : 总页数
      */
     @Schema(description = "总页数")
-    private long pages;
+    private Integer pages;
 
     /**
      * @Fields totalRecords : 总记录数
      */
     @Schema(description = "总记录数")
-    private long total;
+    private Integer total;
 
     /**
      * @Fields records : 返回记录列表

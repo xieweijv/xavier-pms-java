@@ -1,7 +1,9 @@
 package com.xavier.pms.controller;
 
+import cn.hutool.core.util.StrUtil;
 import com.xavier.pms.req.EmployeeAddDto;
 import com.xavier.pms.req.EmployeeQueryDto;
+import com.xavier.pms.req.UpdatePwdDto;
 import com.xavier.pms.resp.EmployeeCardVo;
 import com.xavier.pms.resp.EmployeeListVo;
 import com.xavier.pms.result.QueryResultVo;
@@ -23,7 +25,7 @@ import java.util.List;
  *
  * @author Xavier
  * @version 1.0
- * @CopyRright (c): <素焉>
+ * @CopyRright (c): 星辰
  */
 @Slf4j
 @RequestMapping("user")
@@ -51,6 +53,17 @@ public class UserController extends CommonController {
     @PostMapping("query")
     public Result<QueryResultVo<EmployeeListVo>> query(@Validated @RequestBody EmployeeQueryDto dto) {
         return Result.ok(userService.queryEmployee(dto));
+    }
+
+    @Operation(summary = "修改密码", description = "@author 星辰")
+    @PostMapping("updatePwd")
+    public Result updatePwd(@Validated @RequestBody UpdatePwdDto dto) {
+        if (StrUtil.equals(dto.getOldPassword(), dto.getNewPassword())) {
+            return Result.error("新密码不能和旧密码相同");
+        }
+        dto.setUserId(getLoginUser().getId());
+        userService.updatePwd(dto);
+        return Result.ok();
     }
 
     @Operation(summary = "根据部门id查询员工列表信息", description = "@author 星辰")
